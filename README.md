@@ -4,6 +4,12 @@ A standalone presentation website for discussing the Fresh Phones PH prototype, 
 
 The deck contains 24 slides in five chapters. Existing prototype capabilities, documented client rules, proposed additions, open decisions, and expected outcomes have distinct labels. It does not modify or connect to the operational Fresh Phones PH application.
 
+## Open the presentation
+
+[View the presentation on GitHub Pages](https://justinebacurin1927.github.io/freshphonesph-workflow-discussion/).
+
+The presentation and this repository are public. No ChatGPT sign-in is required. Changes pushed to `main` run the checks and publish `dist/` through `.github/workflows/pages.yml`.
+
 ## Run locally
 
 Requires Node.js 20 or newer. No package installation or API credentials are needed.
@@ -26,7 +32,7 @@ npm run check
 - Copy a slide link to share its exact position.
 - Print the complete deck using the header's print button; choose landscape PDF if your browser does not honor the page settings.
 
-The Decision log stores answers in the current browser only. Export notes as Markdown to share or retain them. Browser-local notes are not uploaded to the site or GitHub, synchronized between devices, or treated as signed client acceptance. The deployment's private access controls protect the site; `noindex` metadata is an additional indexing preference, not authentication.
+The Decision log stores answers in the current browser only. Export notes as Markdown to share or retain them. Browser-local notes are not uploaded to the site or GitHub, synchronized between devices, or treated as signed client acceptance. The site's `noindex` metadata is an indexing preference; the GitHub Pages presentation remains publicly accessible.
 
 ## Edit content
 
@@ -37,9 +43,10 @@ The Decision log stores answers in the current browser only. Export notes as Mar
 | `dist/styles.css` | Responsive layout, presentation mode, and all-slide print styling |
 | `dist/assets/` | Favicon and existing synthetic-account prototype captures |
 | `scripts/serve.mjs` | Dependency-free local static server |
-| `.openai/hosting.json` | Private Sites hosting identity and static output directory |
+| `.github/workflows/pages.yml` | Check and publish `dist/` to GitHub Pages on pushes to `main` |
+| `.openai/hosting.json` | Retained identity for the earlier private Sites preview |
 
-Any static host can serve `dist/`. Relative assets and hash-based slide links support a subdirectory deployment. Sites publication uses its source workflow and the existing project identity in the hosting manifest.
+Any static host can serve `dist/`. Relative assets and hash-based slide links support the GitHub Pages project subdirectory. The GitHub Pages workflow is the current publication path; the earlier private Sites preview is no longer the discussion link.
 
 ## Sources and boundaries
 
