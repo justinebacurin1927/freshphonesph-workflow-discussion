@@ -35,6 +35,7 @@ npm run check
 - Use the arrow keys, Previous and Next buttons, or a horizontal swipe to navigate.
 - Press **O** for the contents, **N** for presenter notes, and **F** for presentation mode.
 - Presentation mode fills the screen. Move the pointer to the top or bottom, tap on a touch screen, or press Tab to reveal controls; they hide after a short pause. Press **Esc** or **F** to exit.
+- Slide text uses larger reading sizes, including card lists and role-table cells. Notes appear as plain text; the decorative top tabs and highlighted note strips have been removed. Narrow screens scroll within a fullscreen slide when needed.
 - Use Home and End to jump to the first and last slides.
 - Copy a slide link to share its exact position.
 - Print the complete deck using the header's print button; choose landscape PDF if your browser does not honor the page settings.
@@ -48,6 +49,7 @@ The Decision log stores answers in the current browser only. Export notes as Mar
 | `dist/slides.js` | Slide content, source references, presenter notes, and discussion prompts |
 | `dist/app.js` | Slide rendering, navigation, workflow inspection, decision log, and export |
 | `dist/styles.css` | Responsive layout, presentation mode, and all-slide print styling |
+| `dist/readability.css` | Shared screen typography and larger card, diagram, and table layouts |
 | `dist/assets/` | Favicon and existing synthetic-account prototype captures |
 | `scripts/serve.mjs` | Dependency-free local static server |
 | `.github/workflows/pages.yml` | Check and publish `dist/` to GitHub Pages on pushes to `main` |

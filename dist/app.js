@@ -1,4 +1,4 @@
-import {chapters,slides,decisions} from './slides.js?v=fullscreen-3';
+import {chapters,slides,decisions} from './slides.js?v=readable-4';
 
 const $=(s,root=document)=>root.querySelector(s);
 const $$=(s,root=document)=>[...root.querySelectorAll(s)];
@@ -28,7 +28,7 @@ const paths={
 const icon=name=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.check}</svg>`;
 const statuses={existing:'Existing prototype',documented:'Client workflow',proposed:'Proposed design',decision:'Client decision',expected:'Expected outcome',discussion:'Discussion',reference:'Reference'};
 const card=(title,body,extra='')=>`<article class="content-card ${extra}"><h3>${escapeHTML(title)}</h3><p>${escapeHTML(body)}</p></article>`;
-const callout=s=>s.callout?`<div class="callout"><span class="callout-mark" aria-hidden="true">↳</span><p>${escapeHTML(s.callout)}</p></div>`:'';
+const callout=s=>s.callout?`<p class="slide-note">${escapeHTML(s.callout)}</p>`:'';
 const title=s=>`<div class="slide-heading"><span class="eyebrow">${escapeHTML(s.eyebrow)}</span><h1 tabindex="-1">${escapeHTML(s.title)}</h1><p class="slide-summary">${escapeHTML(s.summary)}</p></div>`;
 const node=(name,extra='')=>`<div class="org-node ${extra}">${name}</div>`;
 
