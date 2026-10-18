@@ -34,6 +34,7 @@ npm run check
 
 - Use the arrow keys, Previous and Next buttons, or a horizontal swipe to navigate.
 - Press **O** for the contents, **N** for presenter notes, and **F** for presentation mode.
+- Presentation mode fills the screen. Move the pointer to the top or bottom, tap on a touch screen, or press Tab to reveal controls; they hide after a short pause. Press **Esc** or **F** to exit.
 - Use Home and End to jump to the first and last slides.
 - Copy a slide link to share its exact position.
 - Print the complete deck using the header's print button; choose landscape PDF if your browser does not honor the page settings.

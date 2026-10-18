@@ -1,4 +1,4 @@
-import {chapters,slides,decisions} from './slides.js?v=teal-2';
+import {chapters,slides,decisions} from './slides.js?v=fullscreen-3';
 
 const $=(s,root=document)=>root.querySelector(s);
 const $$=(s,root=document)=>[...root.querySelectorAll(s)];
@@ -111,6 +111,7 @@ $$('[data-close]').forEach(el=>el.innerHTML=icon('close'));
 let index=0;
 let showNotes=false;
 let toastTimer;
+let presentationControlsTimer;
 function toast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),2800);}
 function go(next,{focus=true,hash=true}={}){
  index=Math.max(0,Math.min(slides.length-1,next));
@@ -130,6 +131,7 @@ function go(next,{focus=true,hash=true}={}){
  if(hash&&location.hash!==`#${s.id}`)history.replaceState(null,'',`#${s.id}`);
  $('#slide-stage').scrollTop=0;
  $('.slides').scrollTop=0;
+ $(`#slide-${s.id}`).scrollTop=0;
  window.scrollTo({top:0,behavior:'instant'});
  if(focus)$('h1',$(`#slide-${s.id}`))?.focus({preventScroll:true});
 }
@@ -137,14 +139,34 @@ function fromHash(){const n=slides.findIndex(s=>`#${s.id}`===location.hash);go(n
 window.addEventListener('hashchange',fromHash);fromHash();
 function openDialog(id){const d=$(`#${id}`);if(!d.open)d.showModal();}
 function notes(){showNotes=!showNotes;$('#presenter-notes').hidden=!showNotes;$('[data-action="notes"]').setAttribute('aria-pressed',String(showNotes));}
-async function present(){
- const entering=!document.body.classList.contains('presenting');
+function revealPresentationControls(){
+ if(!document.body.classList.contains('presenting'))return;
+ document.body.classList.add('presentation-controls-visible');
+ clearTimeout(presentationControlsTimer);
+ presentationControlsTimer=setTimeout(()=>document.body.classList.remove('presentation-controls-visible'),2400);
+}
+function setPresentationMode(entering){
  document.body.classList.toggle('presenting',entering);
- $('[data-action="present"] span:last-child').textContent=entering?'Exit':'Present';
+ const button=$('[data-action="present"]');
+ $('span:last-child',button).textContent=entering?'Exit':'Present';
+ button.setAttribute('aria-pressed',String(entering));
+ button.setAttribute('aria-label',entering?'Exit fullscreen presentation':'Start fullscreen presentation');
+ clearTimeout(presentationControlsTimer);
+ document.body.classList.remove('presentation-controls-visible');
+ if(entering)revealPresentationControls();
+}
+async function present(entering=!document.body.classList.contains('presenting')){
+ setPresentationMode(entering);
  if(entering&&document.documentElement.requestFullscreen){try{await document.documentElement.requestFullscreen()}catch{toast('Presentation view enabled. Press Esc to exit.')}}
  else if(!entering&&document.fullscreenElement){try{await document.exitFullscreen()}catch{}}
+ $('.slide:not([hidden]) h1')?.focus({preventScroll:true});
 }
-document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.body.classList.contains('presenting')){document.body.classList.remove('presenting');$('[data-action="present"] span:last-child').textContent='Present'}});
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)setPresentationMode(false)});
+document.addEventListener('pointermove',e=>{
+ if(e.clientY<80||e.clientY>window.innerHeight-80)revealPresentationControls();
+},{passive:true});
+document.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')revealPresentationControls()},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='Tab')revealPresentationControls()});
 
 document.addEventListener('click',async e=>{
  const jump=e.target.closest('[data-go]');
@@ -185,7 +207,7 @@ document.addEventListener('keydown',e=>{
   case 'n':case 'N':notes();break;
   case 'f':case 'F':e.preventDefault();present();break;
   case '?':openDialog('help-dialog');break;
-  case 'Escape':if(document.body.classList.contains('presenting')){document.body.classList.remove('presenting');$('[data-action="present"] span:last-child').textContent='Present';}break;
+  case 'Escape':if(document.body.classList.contains('presenting'))present(false);break;
  }
 });
 
