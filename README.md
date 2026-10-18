@@ -10,6 +10,12 @@ The deck contains 24 slides in five chapters. Existing prototype capabilities, d
 
 The presentation and this repository are public. No ChatGPT sign-in is required. Changes pushed to `main` run the checks and publish `dist/` through `.github/workflows/pages.yml`.
 
+## Design and prototype views
+
+The presentation uses the supplied palette: deep teal `#042329`, teal `#005850`, green `#008C5E`, and mint `#7CC490`. Sora headings and DM Sans body text are served from local font files, with their SIL Open Font License notices retained. Bold emphasis highlights the important rules, responsibilities, and decisions.
+
+The prototype slide includes both desktop and mobile previews. Overview, Support, and Documents switch both captures; the screen-size controls select desktop, mobile, or both. Click a capture to inspect its full interface in an enlarged view.
+
 ## Run locally
 
 Requires Node.js 20 or newer. No package installation or API credentials are needed.
@@ -52,6 +58,6 @@ Any static host can serve `dist/`. Relative assets and hash-based slide links su
 
 Prepared from the supplied `Fresh_Phones_PH_Basic_Website_Workflow.docx` and `Fresh_Phones_PH_Organizational_Structure_V4.pdf`, plus the local `freshphonesph-main-run` code and project documentation inspected on 18 October 2026. The original client documents and application source are not copied into this repository.
 
-The portal screenshots are earlier captures from `docs/uat/customer-mobile-walkthrough-2026-09-27.md` in the prototype repository. That walkthrough identifies them as synthetic-account evidence. Their date is visible in the deck; the screenshots do not claim to show the latest October UI, real company collections, or client acceptance.
+Mobile screenshots are earlier captures from `docs/uat/customer-mobile-walkthrough-2026-09-27.md` in the prototype repository. That walkthrough identifies them as synthetic-account evidence. Desktop screenshots show the actual local portal components rendered in October 2026 with isolated illustrative API responses, captured at 1600×1000. No production data or live financial transactions were used. Both capture sources are labeled in the deck; neither establishes business acceptance or backend verification.
 
 Proposed states, role mappings, scope expansions, acceptance scenarios, and implementation phases require client confirmation. The presentation makes no new price, delivery-date, production-readiness, or measured-benefit commitment.

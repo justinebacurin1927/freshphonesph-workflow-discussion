@@ -1,4 +1,4 @@
-import {chapters,slides,decisions} from './slides.js';
+import {chapters,slides,decisions} from './slides.js?v=teal-2';
 
 const $=(s,root=document)=>root.querySelector(s);
 const $$=(s,root=document)=>[...root.querySelectorAll(s)];
@@ -22,6 +22,8 @@ const paths={
  shield:'<path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5z"/><path d="m8 11 3 3 5-5"/>',
  message:'<path d="M21 11a9 9 0 0 1-9 9H3l2-5a9 9 0 1 1 16-4Z"/><path d="M8 10h8M8 14h5"/>',
  play:'<path d="m9 5 10 7-10 7z"/>',
+ monitor:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/>',
+ phone:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-2 14h.01"/>',
 };
 const icon=name=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.check}</svg>`;
 const statuses={existing:'Existing prototype',documented:'Client workflow',proposed:'Proposed design',decision:'Client decision',expected:'Expected outcome',discussion:'Discussion',reference:'Reference'};
@@ -32,9 +34,9 @@ const node=(name,extra='')=>`<div class="org-node ${extra}">${name}</div>`;
 
 function body(s){
  switch(s.type){
-  case 'cover':return `<div class="cover-layout"><div class="cover-copy"><div class="cover-kicker"><span class="tiny-star">✦</span> A CLIENT DISCUSSION</div><h1 tabindex="-1">From prototype<br>to <em>aligned</em><br>operations.</h1><p>${escapeHTML(s.summary)}</p><button class="cover-start" data-action="next">Let's walk through it ${icon('arrow-right')}</button><div class="cover-bottom"><span>PROTOTYPE</span><span>WORKFLOW</span><span>IMPLEMENTATION</span><span>OUTCOME</span></div></div><div class="cover-visual" aria-label="A working prototype and client workflow lead to an aligned system"><div class="diagram-label">THE NEXT CHAPTER <span>↗</span></div><div class="cover-path"><div class="path-card"><span class="path-no">01</span><div><small>OUR STARTING POINT</small><strong>The prototype</strong><p>A working foundation</p></div><span class="path-symbol">↗</span></div><div class="path-connector"><span></span><b>+</b><span></span></div><div class="path-card"><span class="path-no">02</span><div><small>THE OPERATING MODEL</small><strong>Your workflow</strong><p>People, rules, and handoffs</p></div><span class="path-symbol">↗</span></div><div class="path-connector down">↓</div><div class="path-card result"><span class="path-no">03</span><div><small>THE SHARED DIRECTION</small><strong>An aligned system</strong><p>Clear ownership. Reliable records.</p></div><span class="path-symbol">✦</span></div></div><div class="diagram-foot">Built around the way your team works.</div><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div></div>`;
+  case 'cover':return `<div class="cover-layout"><div class="cover-copy"><div class="cover-kicker"><span class="tiny-star">✦</span> FRESH PHONES PH / THE NEXT CHAPTER</div><h1 tabindex="-1"><span>From prototype.</span><br>To <em>aligned</em><br>operations.</h1><p>${escapeHTML(s.summary)}</p><button class="cover-start" data-action="next">Let's walk through it ${icon('arrow-right')}</button><div class="cover-bottom"><span>01 / PROTOTYPE</span><span>02 / WORKFLOW</span><span>03 / IMPLEMENTATION</span><span>04 / OUTCOME</span></div></div><div class="cover-visual" aria-label="A working prototype and the client workflow connect into an aligned operating system"><div class="diagram-label">THE OPERATING MODEL <span>↗</span></div><div class="cover-grid" aria-hidden="true"></div><div class="system-orbit orbit-one" aria-hidden="true"></div><div class="system-orbit orbit-two" aria-hidden="true"></div><div class="cover-path"><div class="path-card"><span class="path-no">01</span><div><small>THE FOUNDATION</small><strong>The prototype</strong><p>Working tools. Existing capabilities.</p></div><span class="path-symbol">${icon('records')}</span></div><div class="path-connector"><span></span><b>+</b><span></span></div><div class="path-card workflow-path"><span class="path-no">02</span><div><small>THE BUSINESS REALITY</small><strong>Your workflow</strong><p>People, rules, and handoffs.</p></div><span class="path-symbol">${icon('user')}</span></div><div class="path-connector down">↓</div><div class="path-card result"><span class="path-no">03</span><div><small>THE SHARED DIRECTION</small><strong>Aligned operations</strong><p>Clear ownership. Reliable records.</p></div><span class="path-symbol">✦</span></div></div><div class="diagram-foot"><span><b>12</b> defined roles</span><span><b>1</b> official record</span></div></div></div>`;
   case 'foundation':return `<div class="foundation-grid">${s.items.map(([i,t,d])=>`<article class="foundation-card"><span class="feature-icon">${icon(i)}</span><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>${callout(s)}`;
-  case 'prototype':return `<div class="prototype-layout"><div class="prototype-copy">${s.items.map(([t,d],i)=>`<div class="numbered-row"><span>0${i+1}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('')}<div class="capture-label"><span class="status-dot"></span> Earlier prototype capture<br><small>27 Sep 2026 · synthetic demo account</small></div></div><div class="prototype-view"><div class="capture-tabs" role="group" aria-label="Prototype screenshots">${s.images.map(([t,p],i)=>`<button data-capture="${i}" aria-pressed="${i===0}">${t}</button>`).join('')}</div><div class="phone-frame"><img src="${s.images[0][1]}" alt="Earlier synthetic-account customer portal overview" width="390" height="844" loading="lazy"></div></div></div>`;
+  case 'prototype':return `<div class="prototype-layout"><div class="prototype-copy">${s.items.map(([t,d],i)=>`<div class="numbered-row"><span>0${i+1}</span><div><h3>${t}</h3><p>${d}</p></div></div>`).join('')}<div class="capture-label"><span class="status-dot"></span> Responsive customer portal<small>Click a screen to inspect the details.</small></div></div><div class="prototype-gallery mode-both" data-device="both"><div class="gallery-controls"><div class="capture-tabs" role="group" aria-label="Prototype screenshots">${s.images.map(([t,p],i)=>`<button data-capture="${i}" aria-pressed="${i===0}">${t}</button>`).join('')}</div><div class="device-tabs" role="group" aria-label="Screen size"><button data-device="both" aria-pressed="true" aria-label="Show desktop and mobile">Both</button><button data-device="desktop" aria-pressed="false" aria-label="Show desktop only">${icon('monitor')}</button><button data-device="mobile" aria-pressed="false" aria-label="Show mobile only">${icon('phone')}</button></div></div><div class="device-stage"><button class="desktop-frame" data-action="zoom-capture" data-view="desktop" aria-label="Enlarge desktop prototype"><span class="browser-chrome"><i></i><i></i><i></i><span>Fresh Phones PH / Customer workspace</span></span><img src="${s.desktopImages[0][1]}" alt="Desktop customer portal interface rendered with illustrative data" width="1600" height="1000" loading="lazy"></button><button class="phone-frame" data-action="zoom-capture" data-view="mobile" aria-label="Enlarge mobile prototype"><img src="${s.images[0][1]}" alt="Earlier synthetic-account mobile customer portal overview" width="390" height="844" loading="lazy"></button><span class="device-label desktop-label">DESKTOP / CURRENT UI</span><span class="device-label mobile-label">MOBILE</span></div><div class="capture-provenance">Desktop: Oct 2026 UI with illustrative data · Mobile: Sep 2026 synthetic capture</div></div></div>`;
   case 'demo':return `<div class="demo-steps">${s.steps.map(([n,t,d])=>`<article><span class="large-number">${n}</span><div class="demo-step-rule"></div><h3>${t}</h3><p>${d}</p></article>`).join('')}</div>${callout(s)}`;
   case 'channels':return `<div class="channel-grid">${s.items.map(([i,t,k,items],n)=>`<article class="channel-card channel-${n}"><span class="feature-icon">${icon(i)}</span><span class="channel-kicker">${k}</span><h3>${t}</h3><ul>${items.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>`;
   case 'organization':return `<div class="org-chart" aria-label="Organization chart"><div class="org-trunk">${node('Chief Executive Officer<br><small>CEO</small>','executive')}<span class="org-arrow">↓</span>${node('Chief Operating Officer<br><small>COO</small>','coo')}<span class="org-arrow">↓</span></div><div class="org-branches"><div class="org-branch">${node('Batch<br>Manager')}<span class="org-arrow">↓</span>${node('Batch<br>Handlers','team')}</div><div class="org-branch">${node('HR & Payroll<br>Officer')}</div><div class="org-branch">${node('Records &<br>Monitoring<br>Officer')}</div><div class="org-branch">${node('Finance<br>Officer')}</div><div class="org-branch">${node('KPI<br>Officer')}</div><div class="org-branch">${node('Operations<br>Coordinator &<br>Moderator')}<span class="org-arrow">↓</span>${node('Pioneer<br>Agents','team')}<span class="org-arrow">↓</span>${node('Agents','team')}</div><div class="org-branch">${node('Customer Service<br>Representative<br><small>CSR</small>')}</div></div></div><div class="org-caption">Supervisor → direct report <span>Role categories, not headcounts</span></div>`;
@@ -60,7 +62,38 @@ function body(s){
  }
 }
 
-$('#slides').innerHTML=slides.map((s,i)=>`<section class="slide slide-${s.type}" id="slide-${s.id}" data-index="${i}" aria-label="Slide ${i+1} of ${slides.length}: ${escapeHTML(s.title)}" ${i?'hidden':''}>${s.type==='cover'?'':title(s)}<div class="slide-body">${body(s)}</div><div class="slide-source"><span>${escapeHTML(s.source)}</span><span>${String(i+1).padStart(2,'0')}</span></div></section>`).join('');
+$('#slides').innerHTML=slides.map((s,i)=>`<section class="slide slide-${s.type} chapter-${s.chapter}" id="slide-${s.id}" data-index="${i}" aria-label="Slide ${i+1} of ${slides.length}: ${escapeHTML(s.title)}" ${i?'hidden':''}>${s.type==='cover'?'':title(s)}<div class="slide-body">${body(s)}</div><div class="slide-source"><span>${escapeHTML(s.source)}</span><span>${String(i+1).padStart(2,'0')}</span></div></section>`).join('');
+const emphasis={
+ start:['aligned','operations'],today:['working foundation','Member records','financial decisions','audit records','Business acceptance','production setup'],
+ 'prototype-screens':['Desktop and mobile','verified payments','remaining balance','Documents','Membership'],demo:['one member','pending claim','financial decision','verified amounts','Confirmed','Needs revision','Later'],
+ 'operating-model':['official records','official record','Payment recording','Own membership','confirm scope'],organization:['Twelve roles','COO'],onboarding:['Training','approved','authorized roles','readiness','elevated access'],
+ 'member-journey':['active batch','8 confirmed prospects','Batch ID creation','Activation','complete slots and conditions'],
+ 'batch-readiness':['payment schedule','issued at enrollment','before activation','tentative or binding','binding terms'],
+ payments:['financial decision','actual funds received','financial verification','verified credit','Operational check'],
+ 'payment-exceptions':['next step','Finance confirmation','financial status remains pending','original decisions','duplicate','partial'],
+ 'role-alignment':['authority','Only Finance','only Finance','assigned batches','financial verification','authorized role'],
+ 'new-workspaces':['recruitment team','assigned Agents','Own endorsements','commission eligibility','distinct workflows'],
+ 'core-records':['enrollment','Eight-person confirmation','activation checks','agreed terms','multiple memberships'],
+ automation:['waiting','next action','prerequisites','responsible reviewer','correction reason','Assignment rules'],
+ 'supporting-modules':['same model','commission rules','human evaluations','Limited customer','release eligibility','Confirm separately'],
+ 'implementation-map':['One operating model','Authorized actions','recorded and verified','real identities','complete journey'],
+ delivery:['deliberate order','confirmed scope','Access','payment reviews','client UAT','release approval'],
+ outcomes:['confidence','Clear accountability','verified funds','next reviewer','balance unchanged','Reassignment'],
+ acceptance:['actual roles','blocks activation','Finance decides','no credit','history','cannot financially verify','launch approval'],
+ discussion:['Agree the rules','Who approves','capacity','Finance backup','payroll scope','who accepts'],
+ 'next-steps':['shared plan','Confirmed workflow','Agreed access matrix','Revision backlog','Acceptance plan'],
+ backlog:['alignment checklist','Finance-only decision','verified-only balances','audit preservation','activation','privacy'],
+ sources:['supplied workflow','Proposed additions','not production features','signed acceptance'],
+};
+function emphasize(root,phrases=[]){
+ if(!phrases.length)return;
+ const escaped=phrases.slice().sort((a,b)=>b.length-a.length).map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+ const re=new RegExp(`(?<![\\w])(${escaped.join('|')})(?![\\w])`,'gi');
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.textContent.trim()&&!n.parentElement.closest('strong,button,small,code,svg,.slide-source,.eyebrow,.flow-number')?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ for(const n of nodes){const text=n.textContent;re.lastIndex=0;const matches=[...text.matchAll(re)];if(!matches.length)continue;const f=document.createDocumentFragment();let start=0;for(const m of matches){f.append(document.createTextNode(text.slice(start,m.index)));const strong=document.createElement('strong');strong.textContent=m[0];f.append(strong);start=m.index+m[0].length;}f.append(document.createTextNode(text.slice(start)));n.replaceWith(f);}
+}
+slides.forEach(s=>emphasize($(`#slide-${s.id}`),emphasis[s.id]));
 $('#total-number').textContent=String(slides.length).padStart(2,'0');
 
 function renderNav(){
@@ -118,9 +151,11 @@ document.addEventListener('click',async e=>{
  if(jump){const d=jump.closest('dialog');if(d?.open)d.close();go(Number(jump.dataset.go));return;}
  const close=e.target.closest('[data-close]');if(close){$(`#${close.dataset.close}`).close();return;}
  const stage=e.target.closest('[data-stage]');
- if(stage){const s=slides[index],n=Number(stage.dataset.stage);$$('[data-stage]',stage.parentElement).forEach(el=>{el.classList.toggle('active',el===stage);el.setAttribute('aria-pressed',String(el===stage))});const d=$('.stage-detail',stage.closest('.slide'));$('.eyebrow',d).textContent=s.stages[n].role;$('.stage-description',d).textContent=s.stages[n].detail;$('.stage-result p',d).textContent=s.stages[n].result;return;}
+ if(stage){const s=slides[index],n=Number(stage.dataset.stage);$$('[data-stage]',stage.parentElement).forEach(el=>{el.classList.toggle('active',el===stage);el.setAttribute('aria-pressed',String(el===stage))});const d=$('.stage-detail',stage.closest('.slide'));$('.eyebrow',d).textContent=s.stages[n].role;$('.stage-description',d).textContent=s.stages[n].detail;$('.stage-result p',d).textContent=s.stages[n].result;emphasize(d,emphasis[s.id]);return;}
  const capture=e.target.closest('[data-capture]');
- if(capture){const s=slides[index],n=Number(capture.dataset.capture);$$('[data-capture]',capture.parentElement).forEach(el=>el.setAttribute('aria-pressed',String(el===capture)));const img=$('.phone-frame img',capture.closest('.slide'));img.src=s.images[n][1];img.alt=`Earlier synthetic-account customer portal ${s.images[n][0].toLowerCase()} screen`;return;}
+ if(capture){const s=slides[index],n=Number(capture.dataset.capture);$$('[data-capture]',capture.parentElement).forEach(el=>el.setAttribute('aria-pressed',String(el===capture)));const root=capture.closest('.slide');const img=$('.phone-frame img',root);img.src=s.images[n][1];img.alt=`Earlier synthetic-account mobile customer portal ${s.images[n][0].toLowerCase()} screen`;const desktop=$('.desktop-frame img',root);desktop.src=s.desktopImages[n][1];desktop.alt=`Desktop customer portal ${s.desktopImages[n][0].toLowerCase()} interface with illustrative data`;return;}
+ const device=e.target.closest('button[data-device]');
+ if(device){const gallery=device.closest('.prototype-gallery');gallery.dataset.device=device.dataset.device;gallery.className=`prototype-gallery mode-${device.dataset.device}`;$$('.device-tabs button',gallery).forEach(el=>el.setAttribute('aria-pressed',String(el===device)));return;}
  const action=e.target.closest('[data-action]')?.dataset.action;
  switch(action){
   case 'next':go(index===slides.length-1?0:index+1);break;
@@ -133,6 +168,7 @@ document.addEventListener('click',async e=>{
   case 'print':window.print();break;
   case 'copy':try{await navigator.clipboard.writeText(location.href);toast('Slide link copied.')}catch{toast('Copy the address from your browser to share this slide.')}break;
   case 'export':exportDecisions();break;
+  case 'zoom-capture':{const frame=e.target.closest('[data-view]');const img=$('img',frame);$('#enlarged-capture').src=img.src;$('#enlarged-capture').alt=img.alt;$('#capture-title').textContent=frame.dataset.view==='desktop'?'Desktop prototype':'Mobile prototype';$('#capture-dialog').classList.toggle('mobile-capture',frame.dataset.view==='mobile');openDialog('capture-dialog');break;}
  }
 });
 $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));

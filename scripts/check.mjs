@@ -17,11 +17,13 @@ for(const slide of slides){
  assert(chapterIDs.has(slide.chapter),`Unknown chapter on ${slide.id}`);
  for(const key of ['id','type','title','summary','notes','source','status'])assert(slide[key],`Missing ${key} on ${slide.id}`);
  for(const [,asset] of slide.images||[])await access(path.join(root,'dist',asset));
+ for(const [,asset] of slide.desktopImages||[])await access(path.join(root,'dist',asset));
 }
 const html=await readFile(path.join(root,'dist/index.html'),'utf8');
 for(const asset of [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m=>m[1])){
- if(!/^(?:https?:|mailto:)/.test(asset))await access(path.join(root,'dist',asset));
+ if(!/^(?:https?:|mailto:)/.test(asset))await access(path.join(root,'dist',asset.split(/[?#]/)[0]));
 }
 const hosting=JSON.parse(await readFile(path.join(root,'.openai/hosting.json'),'utf8'));
 assert.equal(hosting.static.directory,'dist');
+for(const font of ['Sora-Variable.ttf','DMSans-Variable.ttf','Sora-OFL.txt','DMSans-OFL.txt'])await access(path.join(root,'dist/assets/fonts',font));
 console.log(`Checked ${slides.length} slides, ${chapters.length} chapters, ${decisions.length} discussion prompts, local assets, and JavaScript syntax.`);

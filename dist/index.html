@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f6f5f2">
+  <meta name="theme-color" content="#042329">
   <meta name="description" content="A discussion of the Fresh Phones PH prototype, client workflow, implementation changes, and expected outcomes.">
   <meta name="robots" content="noindex,nofollow">
   <meta property="og:title" content="Fresh Phones PH — From prototype to aligned operations">
@@ -12,8 +12,10 @@
   <link rel="canonical" href="https://justinebacurin1927.github.io/freshphonesph-workflow-discussion/">
   <title>Fresh Phones PH — Workflow alignment</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=teal-2">
+  <link rel="preload" href="assets/fonts/Sora-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSans-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <script type="module" src="app.js?v=teal-2"></script>
 </head>
 <body>
   <a class="skip-link" href="#slide-stage">Skip to presentation</a>
@@ -31,7 +33,7 @@
   <aside class="sidebar" aria-label="Presentation navigation">
     <div class="sidebar-heading">THE DISCUSSION <button class="icon-button small" data-action="overview" aria-label="View all slides" title="All slides"></button></div>
     <nav id="chapter-nav"></nav>
-    <div class="sidebar-bottom"><span class="sidebar-rule"></span><p>A working foundation.<br>A shared operating model.</p><div class="source-label"><span class="status-dot"></span> Based on workflow + V4</div></div>
+    <div class="sidebar-bottom"><div class="palette-signature" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p>A working foundation.<br><strong>A shared operating model.</strong></p><div class="source-label"><span class="status-dot"></span> Based on workflow + V4</div></div>
   </aside>
 
   <main class="workspace" id="slide-stage" tabindex="-1">
@@ -50,6 +52,7 @@
   <dialog class="decisions-dialog" id="decisions-dialog" aria-labelledby="decisions-title"><div class="dialog-header"><div><span class="eyebrow">CAPTURE THE DISCUSSION</span><h2 id="decisions-title">Decision log</h2></div><button class="icon-button" data-close="decisions-dialog" aria-label="Close decision log"></button></div><p class="dialog-intro">Record the client's answers here. Notes stay in this browser; export a copy to share with the team. A selection here does not change the actual system.</p><p id="save-status" class="save-status" role="status"></p><div id="decision-fields"></div><div class="dialog-footer"><span id="decision-count">0 decisions recorded</span><button class="next-button" data-action="export"><span data-icon="download"></span> Export notes</button></div></dialog>
 
   <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><h2 id="help-title">Presentation controls</h2><button class="icon-button" data-close="help-dialog" aria-label="Close shortcuts"></button></div><dl class="shortcut-list"><div><dt>Next / previous</dt><dd>→ / ←</dd></div><div><dt>First / last slide</dt><dd>Home / End</dd></div><div><dt>All slides</dt><dd>O</dd></div><div><dt>Presenter notes</dt><dd>N</dd></div><div><dt>Presentation mode</dt><dd>F</dd></div><div><dt>Close overlay / exit</dt><dd>Esc</dd></div></dl></dialog>
+  <dialog class="capture-dialog" id="capture-dialog" aria-labelledby="capture-title"><div class="dialog-header"><div><span class="eyebrow">PROTOTYPE / ILLUSTRATIVE DATA</span><h2 id="capture-title">Desktop prototype</h2></div><button class="icon-button" data-close="capture-dialog" aria-label="Close prototype preview"></button></div><img id="enlarged-capture" alt="Enlarged prototype interface"><p class="capture-dialog-note">Desktop: current local interface rendered with illustrative data, October 2026. Mobile: recorded synthetic-account capture, September 2026.</p></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript><div class="noscript">This interactive presentation needs JavaScript. Enable JavaScript to navigate the slides.</div></noscript>
 </body>
