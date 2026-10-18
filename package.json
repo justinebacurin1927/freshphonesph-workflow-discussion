@@ -1,0 +1,13 @@
+{
+  "name": "freshphonesph-workflow-discussion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fresh Phones PH prototype and workflow alignment presentation",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

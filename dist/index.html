@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f5f2">
+  <meta name="description" content="A discussion of the Fresh Phones PH prototype, client workflow, implementation changes, and expected outcomes.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:title" content="Fresh Phones PH — From prototype to aligned operations">
+  <meta property="og:description" content="Prototype. Workflow. Implementation. Outcomes. A presentation for the next Fresh Phones PH discussion.">
+  <meta property="og:url" content="https://freshphonesph-workflow-discussion.alpaham-1-4283.chatgpt.site">
+  <title>Fresh Phones PH — Workflow alignment</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#slide-stage">Skip to presentation</a>
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="Fresh Phones PH presentation home"><span class="brand-mark" aria-hidden="true">fp<span>✦</span></span><span class="brand-name">Fresh Phones <b>PH</b><small>Workflow alignment</small></span></a>
+    <div class="meeting-label"><span class="status-dot"></span> Client discussion <span class="meeting-date">/ October 2026</span></div>
+    <div class="top-actions">
+      <button class="icon-button mobile-contents" type="button" data-action="overview" aria-label="Open presentation contents" title="Contents"></button>
+      <button class="text-button" type="button" data-action="decisions" title="Open the local discussion notes"><span class="button-icon" data-icon="edit"></span><span class="action-label">Decision log</span></button>
+      <button class="icon-button" type="button" data-action="print" aria-label="Print all slides or save as PDF" title="Print handout"></button>
+      <button class="present-button" type="button" data-action="present"><span class="button-icon" data-icon="expand"></span><span>Present</span></button>
+    </div>
+  </header>
+
+  <aside class="sidebar" aria-label="Presentation navigation">
+    <div class="sidebar-heading">THE DISCUSSION <button class="icon-button small" data-action="overview" aria-label="View all slides" title="All slides"></button></div>
+    <nav id="chapter-nav"></nav>
+    <div class="sidebar-bottom"><span class="sidebar-rule"></span><p>A working foundation.<br>A shared operating model.</p><div class="source-label"><span class="status-dot"></span> Based on workflow + V4</div></div>
+  </aside>
+
+  <main class="workspace" id="slide-stage" tabindex="-1">
+    <div class="slide-meta"><div id="slide-breadcrumb"></div><div class="slide-tools"><button class="tool-button" data-action="notes" aria-pressed="false"><span data-icon="notes"></span> Presenter notes</button><button class="icon-button small" data-action="copy" aria-label="Copy link to this slide" title="Copy slide link"></button></div></div>
+    <div class="slides" id="slides"></div>
+    <aside class="presenter-notes" id="presenter-notes" aria-label="Presenter notes" hidden><span class="eyebrow">PRESENTER NOTES</span><div id="notes-content"></div></aside>
+    <footer class="deck-footer">
+      <div class="footer-hint"><span class="keycap">←</span><span class="keycap">→</span><span>to navigate</span><button class="help-link" data-action="help" aria-label="Show keyboard shortcuts">?</button></div>
+      <div class="slide-position"><span id="current-number">01</span><span class="progress-track"><span id="progress-fill"></span></span><span id="total-number">24</span></div>
+      <div class="page-controls"><button class="icon-button prev" data-action="prev" aria-label="Previous slide" title="Previous slide"></button><button class="next-button" data-action="next"><span id="next-label">Next slide</span><span data-icon="arrow-right"></span></button></div>
+    </footer>
+  </main>
+
+  <dialog class="overview-dialog" id="overview-dialog" aria-labelledby="overview-title"><div class="dialog-header"><div><span class="eyebrow">THE FULL PICTURE</span><h2 id="overview-title">Choose a slide</h2></div><button class="icon-button" data-close="overview-dialog" aria-label="Close contents"></button></div><div id="overview-grid" class="overview-grid"></div></dialog>
+
+  <dialog class="decisions-dialog" id="decisions-dialog" aria-labelledby="decisions-title"><div class="dialog-header"><div><span class="eyebrow">CAPTURE THE DISCUSSION</span><h2 id="decisions-title">Decision log</h2></div><button class="icon-button" data-close="decisions-dialog" aria-label="Close decision log"></button></div><p class="dialog-intro">Record the client's answers here. Notes stay in this browser; export a copy to share with the team. A selection here does not change the actual system.</p><p id="save-status" class="save-status" role="status"></p><div id="decision-fields"></div><div class="dialog-footer"><span id="decision-count">0 decisions recorded</span><button class="next-button" data-action="export"><span data-icon="download"></span> Export notes</button></div></dialog>
+
+  <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><h2 id="help-title">Presentation controls</h2><button class="icon-button" data-close="help-dialog" aria-label="Close shortcuts"></button></div><dl class="shortcut-list"><div><dt>Next / previous</dt><dd>→ / ←</dd></div><div><dt>First / last slide</dt><dd>Home / End</dd></div><div><dt>All slides</dt><dd>O</dd></div><div><dt>Presenter notes</dt><dd>N</dd></div><div><dt>Presentation mode</dt><dd>F</dd></div><div><dt>Close overlay / exit</dt><dd>Esc</dd></div></dl></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">This interactive presentation needs JavaScript. Enable JavaScript to navigate the slides.</div></noscript>
+</body>
+</html>

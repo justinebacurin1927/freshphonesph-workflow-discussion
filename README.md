@@ -1,0 +1,50 @@
+# Fresh Phones PH workflow discussion
+
+A standalone presentation website for discussing the Fresh Phones PH prototype, the supplied client workflow, the changes required for alignment, and the expected outcomes.
+
+The deck contains 24 slides in five chapters. Existing prototype capabilities, documented client rules, proposed additions, open decisions, and expected outcomes have distinct labels. It does not modify or connect to the operational Fresh Phones PH application.
+
+## Run locally
+
+Requires Node.js 20 or newer. No package installation or API credentials are needed.
+
+```sh
+npm run dev
+```
+
+Open `http://127.0.0.1:4173`. Set `PORT` to use a different local port.
+
+```sh
+npm run check
+```
+
+## Present
+
+- Use the arrow keys, Previous and Next buttons, or a horizontal swipe to navigate.
+- Press **O** for the contents, **N** for presenter notes, and **F** for presentation mode.
+- Use Home and End to jump to the first and last slides.
+- Copy a slide link to share its exact position.
+- Print the complete deck using the header's print button; choose landscape PDF if your browser does not honor the page settings.
+
+The Decision log stores answers in the current browser only. Export notes as Markdown to share or retain them. Browser-local notes are not uploaded to the site or GitHub, synchronized between devices, or treated as signed client acceptance. The deployment's private access controls protect the site; `noindex` metadata is an additional indexing preference, not authentication.
+
+## Edit content
+
+| File | Purpose |
+| --- | --- |
+| `dist/slides.js` | Slide content, source references, presenter notes, and discussion prompts |
+| `dist/app.js` | Slide rendering, navigation, workflow inspection, decision log, and export |
+| `dist/styles.css` | Responsive layout, presentation mode, and all-slide print styling |
+| `dist/assets/` | Favicon and existing synthetic-account prototype captures |
+| `scripts/serve.mjs` | Dependency-free local static server |
+| `.openai/hosting.json` | Private Sites hosting identity and static output directory |
+
+Any static host can serve `dist/`. Relative assets and hash-based slide links support a subdirectory deployment. Sites publication uses its source workflow and the existing project identity in the hosting manifest.
+
+## Sources and boundaries
+
+Prepared from the supplied `Fresh_Phones_PH_Basic_Website_Workflow.docx` and `Fresh_Phones_PH_Organizational_Structure_V4.pdf`, plus the local `freshphonesph-main-run` code and project documentation inspected on 18 October 2026. The original client documents and application source are not copied into this repository.
+
+The portal screenshots are earlier captures from `docs/uat/customer-mobile-walkthrough-2026-09-27.md` in the prototype repository. That walkthrough identifies them as synthetic-account evidence. Their date is visible in the deck; the screenshots do not claim to show the latest October UI, real company collections, or client acceptance.
+
+Proposed states, role mappings, scope expansions, acceptance scenarios, and implementation phases require client confirmation. The presentation makes no new price, delivery-date, production-readiness, or measured-benefit commitment.
