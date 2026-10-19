@@ -1,0 +1,1119 @@
+{
+  "chapters": [
+    {
+      "id": "prototype",
+      "number": "01",
+      "title": "The prototype",
+      "subtitle": "Our starting point"
+    },
+    {
+      "id": "workflow",
+      "number": "02",
+      "title": "The client workflow",
+      "subtitle": "How the business operates"
+    },
+    {
+      "id": "alignment",
+      "number": "03",
+      "title": "What needs to change",
+      "subtitle": "The implementation plan"
+    },
+    {
+      "id": "outcome",
+      "number": "04",
+      "title": "The outcome",
+      "subtitle": "What we agree and deliver"
+    },
+    {
+      "id": "reference",
+      "number": "05",
+      "title": "Reference",
+      "subtitle": "The complete checklist"
+    }
+  ],
+  "slides": [
+    {
+      "id": "start",
+      "chapter": "prototype",
+      "type": "cover",
+      "status": "discussion",
+      "eyebrow": "FRESH PHONES PH / SYSTEM ALIGNMENT",
+      "title": "From prototype to aligned operations.",
+      "summary": "A shared view of what exists, what changes, and what the next system should deliver.",
+      "notes": "Open with the purpose: demonstrate the working foundation, confirm the client operating model, and agree the revision backlog. The earlier prototype was built around the previous scope; the supplied workflow and Organizational Structure V4 add specific roles and handoffs. This is a discussion proposal, not a production acceptance record. No new cost or delivery-date commitment is made by this presentation.",
+      "source": "Client workflow DOCX · Organizational Structure V4 · Current local prototype"
+    },
+    {
+      "id": "today",
+      "chapter": "prototype",
+      "type": "foundation",
+      "status": "existing",
+      "eyebrow": "01 / THE STARTING POINT",
+      "title": "A working foundation is already here.",
+      "summary": "The revision can build on existing capabilities while changing the rules around them.",
+      "items": [
+        [
+          "records",
+          "Batches & members",
+          "Member records, installment schedules, requirements, and assignment."
+        ],
+        [
+          "receipt",
+          "Payments & receipts",
+          "Payment claims, private proof, financial decisions, and audited adjustments."
+        ],
+        [
+          "chart",
+          "Reporting",
+          "Collection summaries, reconciliation, exports, and saved reporting periods."
+        ],
+        [
+          "user",
+          "Customer portal",
+          "Own membership, payment history, documents, release updates, and support."
+        ],
+        [
+          "check",
+          "Team operations",
+          "Tasks, submissions, KPI reviews, support cases, and recruitment records."
+        ],
+        [
+          "shield",
+          "Access & history",
+          "Individual accounts, backend permissions, private files, and audit records."
+        ]
+      ],
+      "callout": "Implemented in local code. Business acceptance and production setup remain open.",
+      "notes": "These are code and repository-documentation findings as of 18 October 2026. They do not claim a fresh end-to-end runtime test, signed UAT, or production readiness. The active local project is freshphonesph-main-run; the freshphonesph path points to it. Keep existing useful features while aligning roles, states, and approvals.",
+      "source": "Prototype BUILD_STATUS.md · schema.prisma · current API and web modules"
+    },
+    {
+      "id": "prototype-screens",
+      "chapter": "prototype",
+      "type": "prototype",
+      "status": "existing",
+      "eyebrow": "THE EXPERIENCE TODAY",
+      "title": "One customer workspace. Desktop and mobile.",
+      "summary": "Explore the prototype across both screen sizes, then align the experience with the confirmed workflow.",
+      "items": [
+        [
+          "Membership",
+          "Assigned device, batch, and account information."
+        ],
+        [
+          "Payment visibility",
+          "Verified payments and the remaining balance."
+        ],
+        [
+          "Follow-up",
+          "Document requests, support conversations, and updates."
+        ]
+      ],
+      "images": [
+        [
+          "Overview",
+          "assets/prototype-overview.png"
+        ],
+        [
+          "Support",
+          "assets/prototype-support.png"
+        ],
+        [
+          "Documents",
+          "assets/prototype-documents.png"
+        ]
+      ],
+      "desktopImages": [
+        [
+          "Overview",
+          "assets/prototype-desktop-overview.png"
+        ],
+        [
+          "Support",
+          "assets/prototype-desktop-support.png"
+        ],
+        [
+          "Documents",
+          "assets/prototype-desktop-documents.png"
+        ]
+      ],
+      "notes": "Desktop screenshots capture the current local Next.js portal interface at 1600×1000 in October 2026, rendered with isolated illustrative API responses for the presentation. They demonstrate interface layout, not a live financial transaction or backend acceptance test. Mobile screenshots are the existing recorded 27 September 2026 synthetic-account captures. Both use sample figures, not company collections. Choose a screen-size view or click a capture to enlarge it.",
+      "source": "Desktop: Oct 2026 interface with illustrative data · Mobile: 27 Sep 2026 synthetic capture"
+    },
+    {
+      "id": "demo",
+      "chapter": "prototype",
+      "type": "demo",
+      "status": "discussion",
+      "eyebrow": "THE LIVE WALKTHROUGH",
+      "title": "Follow one member through the prototype.",
+      "summary": "Keep the demonstration focused on a single story, then discuss how that story should change.",
+      "steps": [
+        [
+          "01",
+          "Member record",
+          "Open an existing batch, member, and schedule."
+        ],
+        [
+          "02",
+          "Payment record",
+          "Show a receipt, a pending claim, and a financial decision."
+        ],
+        [
+          "03",
+          "Management view",
+          "Show how verified amounts appear in reports."
+        ],
+        [
+          "04",
+          "Customer view",
+          "Open the member’s own history, balance, and updates."
+        ]
+      ],
+      "callout": "Record feedback as Confirmed, Needs revision, or Later. Keep proposed stages clearly labeled.",
+      "notes": "Use only synthetic or explicitly approved demo records. Rehearse before the meeting and retain screenshots as a fallback. The current prototype permits Owner/Finance verification, which differs from V4. Explain this when showing the payment screen. This presentation does not launch or control the live operational system.",
+      "source": "Suggested discussion sequence · Existing prototype modules"
+    },
+    {
+      "id": "operating-model",
+      "chapter": "workflow",
+      "type": "channels",
+      "status": "documented",
+      "eyebrow": "02 / THE CLIENT WORKFLOW",
+      "title": "Keep conversations connected to official records.",
+      "summary": "Three surfaces, each with a clear job in the operating model.",
+      "items": [
+        [
+          "message",
+          "Facebook & Messenger",
+          "The conversation",
+          [
+            "Recruitment and interviews",
+            "Orientation and training",
+            "Payment reminders and receipts",
+            "Customer communication"
+          ]
+        ],
+        [
+          "records",
+          "Internal website",
+          "The official record",
+          [
+            "Personnel and member enrollment",
+            "Batch tracking and review queues",
+            "Payment recording and approvals",
+            "Assignments, audit, and reporting"
+          ]
+        ],
+        [
+          "user",
+          "Customer portal",
+          "The account view",
+          [
+            "Own membership information",
+            "Own schedule and payment history",
+            "Documents and release updates",
+            "Applications and purchasing: confirm scope"
+          ]
+        ]
+      ],
+      "notes": "The supplied documents keep Facebook and Messenger as the primary communication channels. V4 allows manual cross-checks against official GCs; it does not require a Messenger API or automated chat import. Customer application and purchasing depth remains to be confirmed against the existing scope.",
+      "source": "Basic Website Workflow · Main idea · V4 §§1, 8"
+    },
+    {
+      "id": "organization",
+      "chapter": "workflow",
+      "type": "organization",
+      "status": "documented",
+      "eyebrow": "THE REPORTING STRUCTURE",
+      "title": "Twelve roles. Clear reporting lines.",
+      "summary": "The COO supervises seven operational functions; two branches have additional team layers.",
+      "notes": "Arrows run from supervisor to direct report. CEO → COO. The COO directly supervises Batch Manager, HR & Payroll, Records & Monitoring, Finance, KPI, Operations Coordinator & Moderator, and CSR. Batch Handlers report to Batch Manager. Pioneer Agents report to Operations Coordinator & Moderator, and Agents report through Pioneer Agents. Roles are not headcounts. Technical administration is a separate access function, not an extra business position inferred from the PDF.",
+      "source": "Organizational Structure V4 · §2 and role responsibilities"
+    },
+    {
+      "id": "onboarding",
+      "chapter": "workflow",
+      "type": "onboarding",
+      "status": "documented",
+      "eyebrow": "PERSONNEL ONBOARDING",
+      "title": "Training comes before system access.",
+      "summary": "HR enrolls approved, trained personnel and assigns authorized roles.",
+      "steps": [
+        [
+          "Recruit",
+          "Facebook / Messenger"
+        ],
+        [
+          "Orient",
+          "Facebook / Messenger"
+        ],
+        [
+          "Train & approve",
+          "External process"
+        ],
+        [
+          "Enroll personnel",
+          "HR / Website"
+        ],
+        [
+          "Activate access",
+          "Authorized role"
+        ]
+      ],
+      "items": [
+        [
+          "Record the readiness",
+          "Approval, training completion, supervisor, and start date."
+        ],
+        [
+          "Control the access",
+          "Define which roles HR may assign and who authorizes elevated access."
+        ]
+      ],
+      "notes": "The DOCX specifies recruitment → orientation → training → enrollment → start working. V4 assigns personnel enrollment and authorized roles to HR. The prototype currently reserves ACCOUNT_MANAGE for Owner, so this is an access-policy change. Confirm the personnel approver and role-assignment limits; avoid granting HR unrestricted technical administration.",
+      "source": "Basic Workflow §1 · V4 role 4 · Current role permissions"
+    },
+    {
+      "id": "member-journey",
+      "chapter": "workflow",
+      "type": "memberJourney",
+      "status": "documented",
+      "eyebrow": "PALUWAGAN MEMBERSHIP",
+      "title": "From interested prospect to active batch.",
+      "summary": "Batch creation, member enrollment, and batch activation are distinct decisions.",
+      "steps": [
+        [
+          "Agents / Pioneer Agents",
+          "Recruit & interview"
+        ],
+        [
+          "Records & Monitoring",
+          "Confirm 8 prospects"
+        ],
+        [
+          "Records & Monitoring",
+          "Assign Batch ID"
+        ],
+        [
+          "Batch Manager",
+          "Enroll approved members"
+        ],
+        [
+          "Batch Manager",
+          "Activate when ready"
+        ]
+      ],
+      "callout": "8 confirmed prospects → Batch ID creation. Activation still depends on complete slots and conditions.",
+      "notes": "Eight confirmed prospective members trigger a unique Batch ID before official enrollment. Do not treat eight as the stated total batch capacity or as automatic activation. The Batch Manager enrolls approved members and adds them to the official GC. Confirm final membership approval authority, capacity, requirement checks, withdrawals, replacements, and enrollment after activation.",
+      "source": "V4 §5 · Basic Workflow §2"
+    },
+    {
+      "id": "batch-readiness",
+      "chapter": "workflow",
+      "type": "comparison",
+      "status": "decision",
+      "eyebrow": "A RULE TO SETTLE EARLY",
+      "title": "When does the payment schedule become final?",
+      "summary": "This decision changes how enrollment, activation, and installment dates should work.",
+      "left": {
+        "label": "CURRENT PROTOTYPE",
+        "title": "A schedule is issued at enrollment.",
+        "items": [
+          "Enrollment generates installment dates immediately.",
+          "Issued schedules lock the batch’s terms and dates.",
+          "Start and end dates are required on the batch."
+        ]
+      },
+      "right": {
+        "label": "CLIENT WORKFLOW",
+        "title": "Enrollment happens before activation.",
+        "items": [
+          "Members can be enrolled while the batch is filling.",
+          "The Batch Manager confirms the start at activation.",
+          "Confirm whether earlier dates are tentative or binding."
+        ]
+      },
+      "callout": "Decision: use draft schedules until activation, or confirm binding terms earlier?",
+      "notes": "The current createClient service generates schedules during enrollment. updateBatch prevents changing terms when schedules exist. The client documents say the batch officially starts after readiness. A draft schedule versus issued schedule is a proposed design option, not a confirmed client requirement. Confirm date and schedule policy before changing data structures.",
+      "source": "records.service.ts · createClient / updateBatch · V4 §5"
+    },
+    {
+      "id": "payments",
+      "chapter": "workflow",
+      "type": "paymentFlow",
+      "status": "documented",
+      "eyebrow": "THE PAYMENT HANDOFF",
+      "title": "Two operational reviews. One financial decision.",
+      "summary": "Click a stage to inspect its owner, action, and result. This is a workflow explanation.",
+      "stages": [
+        {
+          "role": "Batch Handler",
+          "title": "Record",
+          "detail": "Record the member’s payment and upload its receipt within the assigned batch.",
+          "result": "Payment claim and receipt ready for review."
+        },
+        {
+          "role": "Records Officer",
+          "title": "Review",
+          "detail": "Check completeness, entry accuracy, and possible duplicate transactions.",
+          "result": "Reviewed entry or a reasoned correction request."
+        },
+        {
+          "role": "Batch Manager",
+          "title": "Cross-check",
+          "detail": "Cross-check the entry against the official GC and website records.",
+          "result": "Operational check recorded."
+        },
+        {
+          "role": "Finance Officer",
+          "title": "Verify funds",
+          "detail": "Check actual funds received and approve or reject financial verification.",
+          "result": "Financial decision, reviewer, reason, and timestamp."
+        },
+        {
+          "role": "System",
+          "title": "Update",
+          "detail": "Apply verified credit and update the member account and CEO/COO reports.",
+          "result": "Verified-only balance and traceable reporting."
+        }
+      ],
+      "notes": "Payment and receipt sharing remain external. V4 presents Records → Batch Manager → Finance. The DOCX automation section also mentions a Finance task on receipt upload. Confirm whether Finance may inspect receipts early while final verification remains gated. Current code goes directly from Pending to Owner/Finance decision and lacks separate operational review stages. The stage interaction is explanatory and writes no payment data.",
+      "source": "Basic Workflow §§3–4 · V4 §6 · Current finance service"
+    },
+    {
+      "id": "payment-exceptions",
+      "chapter": "workflow",
+      "type": "states",
+      "status": "proposed",
+      "eyebrow": "REVIEWS AND CORRECTIONS",
+      "title": "Every pending payment needs a visible next step.",
+      "summary": "Proposed interface states make ownership clear while financial status remains pending.",
+      "steps": [
+        "Awaiting Records",
+        "Awaiting Batch Manager",
+        "Awaiting Finance",
+        "Financially verified"
+      ],
+      "items": [
+        [
+          "Return with a reason",
+          "Show what is wrong, who must act, and which checks must repeat."
+        ],
+        [
+          "Preserve the history",
+          "Keep original decisions; use controlled corrections and reversals."
+        ],
+        [
+          "Handle exceptions",
+          "Agree duplicate, partial, excess, missing-reference, and wrong-member rules."
+        ]
+      ],
+      "callout": "An operational approval does not apply payment credit. Finance confirmation does.",
+      "notes": "The state wording and return paths are proposals for client validation. Separate operational review from financial status rather than treating a generic approved flag as verification. Existing append-only financial adjustments can be reused. Revisions to amount, member, or reference should invalidate dependent reviews according to agreed rules. Define the submission/receipt completeness gate and who handles returned claims.",
+      "source": "V4 §6 · Current Payment / PaymentAdjustment models · Proposed interface design"
+    },
+    {
+      "id": "role-alignment",
+      "chapter": "alignment",
+      "type": "roles",
+      "status": "proposed",
+      "eyebrow": "03 / WHAT NEEDS TO CHANGE",
+      "title": "Align authority before changing labels.",
+      "summary": "These are current code differences that affect who can complete the new workflow.",
+      "rows": [
+        [
+          "Owner",
+          "CEO",
+          "Remove blanket financial verification; define executive approvals."
+        ],
+        [
+          "General Manager",
+          "Batch Manager",
+          "Confirm the mapping; add enrollment, activation, and operational checks."
+        ],
+        [
+          "Records",
+          "Records & Monitoring",
+          "Separate Batch ID assignment and review from member enrollment."
+        ],
+        [
+          "Core Handler",
+          "Batch Handler",
+          "Add payment entry and receipt upload within assigned batches."
+        ],
+        [
+          "HR / Payroll",
+          "HR & Payroll",
+          "Add personnel onboarding with authorized role-assignment limits."
+        ],
+        [
+          "Analytics",
+          "KPI Officer",
+          "Add scoped target tracking and personnel evaluations."
+        ]
+      ],
+      "callout": "V4: only Finance may financially verify a payment, including when executives can view it.",
+      "notes": "Current contracts grant OWNER every permission; CORE_HANDLER only reads assigned batches and clients; HR lacks ACCOUNT_MANAGE; RECORDS has CLIENT_MANAGE; ANALYTICS has report visibility but no KPI evaluation role. Customer Service Head/Team mapping to CSR also needs confirmation. These are proposed mappings, not an instruction to silently rename existing accounts.",
+      "source": "packages/contracts/src/index.ts · V4 §§3–4"
+    },
+    {
+      "id": "new-workspaces",
+      "chapter": "alignment",
+      "type": "workspaces",
+      "status": "proposed",
+      "eyebrow": "TEAM WORKSPACES TO ADD",
+      "title": "Give the recruitment team its own place to work.",
+      "summary": "An agent directory is useful, but it does not provide the logins and visibility described in V4.",
+      "items": [
+        [
+          "01",
+          "Operations Coordinator & Moderator",
+          "Team coordination, Pioneer Agent progress, announcements, and escalations."
+        ],
+        [
+          "02",
+          "Pioneer Agents",
+          "Assigned Agents, coaching and training updates, and recruitment progress."
+        ],
+        [
+          "03",
+          "Agents",
+          "Own endorsements, application statuses, recruitment results, and commission eligibility."
+        ]
+      ],
+      "callout": "Keep job applicants and prospective Paluwagan members in distinct workflows.",
+      "notes": "The current Agent model is a directory entry with name, code, active flag, and batch associations; it has no login linkage or Pioneer/Coordinator hierarchy. Current recruitment includes careers/job applicants, which is not the same entity as a prospective Paluwagan member. Add supervisor and recruiter ownership without exposing unrelated customer records.",
+      "source": "V4 roles 8, 10, 11 · Current User / Agent / Applicant models"
+    },
+    {
+      "id": "core-records",
+      "chapter": "alignment",
+      "type": "coreRecords",
+      "status": "proposed",
+      "eyebrow": "THE MISSING OPERATIONAL RECORDS",
+      "title": "Connect the steps before and after enrollment.",
+      "summary": "The core records must explain why someone is eligible, who approved them, and what happens next.",
+      "items": [
+        [
+          "Prospect record",
+          "Recruiter, endorsement, intention to continue, approval, and withdrawal."
+        ],
+        [
+          "Batch readiness",
+          "Eight-person confirmation, unique ID, capacity, requirements, and activation checks."
+        ],
+        [
+          "Assignments & GC reference",
+          "Batch Manager, Handler, recruitment ownership, and official GC confirmation."
+        ],
+        [
+          "Membership & schedule",
+          "Enrollment decision, agreed terms, confirmed dates, and schedule issuance."
+        ]
+      ],
+      "callout": "Confirm multiple memberships before deciding the customer-to-batch data model.",
+      "notes": "The current Client belongs to one Batch and has one optional linked account. If customers can join multiple batches, distinguish a person/account from individual memberships. The current Batch has one optional Handler and one Agent, but no assigned Batch Manager, capacity, prospect-confirmation model, or GC confirmation fields. The proposed fields should be minimized to the agreed operational need.",
+      "source": "Current schema.prisma · Batch / Client / Agent · V4 §5"
+    },
+    {
+      "id": "automation",
+      "chapter": "alignment",
+      "type": "automation",
+      "status": "proposed",
+      "eyebrow": "MAKE THE HANDOFF ACTIONABLE",
+      "title": "Route the work, then make waiting visible.",
+      "summary": "A status change should create a clear next action for the right person.",
+      "items": [
+        [
+          "Route",
+          "Create the next review item when its prerequisites are complete."
+        ],
+        [
+          "Assign",
+          "Show the responsible reviewer and support approved backup coverage."
+        ],
+        [
+          "Follow up",
+          "Display queue age, deadline, correction reason, and escalation path."
+        ],
+        [
+          "Notify",
+          "Send approved in-app or email updates without duplicate tasks."
+        ]
+      ],
+      "callout": "Assignment rules must also protect receipts, reports, exports, notifications, and direct links.",
+      "notes": "Existing generic tasks, notifications, durable email outboxes, and workers can support the revision. Payment review needs domain-specific routing, not only manually assigned employee tasks. Current staff payment scope is broad; add batch-level restrictions before granting Handler payment permissions. Reassignment and role changes should immediately remove obsolete access. No Messenger bot or automatic GC import is assumed.",
+      "source": "Basic Workflow §4 · Current staff alerts, tasks, payment scope, and worker modules"
+    },
+    {
+      "id": "supporting-modules",
+      "chapter": "alignment",
+      "type": "supporting",
+      "status": "proposed",
+      "eyebrow": "SUPPORTING THE COMPLETE OPERATION",
+      "title": "Bring the supporting modules into the same model.",
+      "summary": "Reuse what exists; specify the depth of each addition with the client.",
+      "items": [
+        [
+          "HR & commissions",
+          "Personnel records, training readiness, agreed commission rules, and payroll summaries."
+        ],
+        [
+          "KPI & tasks",
+          "Targets, deadlines, human evaluations, and reports scoped to the right team."
+        ],
+        [
+          "CSR & escalation",
+          "Limited customer/payment-status lookup, concerns, ownership, and COO escalation."
+        ],
+        [
+          "Portal & releases",
+          "Aligned statuses, documents, release eligibility, delivery evidence, and customer updates."
+        ]
+      ],
+      "callout": "Confirm separately: full payroll computation, product checkout, draw rules, and device-release rules.",
+      "notes": "V4 calls for payroll preparation and commission records, but the existing scope excludes a full payroll engine. The DOCX mentions product purchases while existing scope excludes online checkout. Neither requires silently adding an entire payroll or commerce product. Device release, delivery, and roulette rules need client detail. Assistive AI remains deferred in the current repository and is not part of this alignment priority.",
+      "source": "V4 §3 · Workflow main idea · Existing scope boundaries and current handoff"
+    },
+    {
+      "id": "implementation-map",
+      "chapter": "alignment",
+      "type": "implementation",
+      "status": "proposed",
+      "eyebrow": "A WHOLE-SYSTEM REVISION",
+      "title": "One operating model across every layer.",
+      "summary": "The alignment touches more than dashboards. Each layer must enforce the same decisions.",
+      "items": [
+        [
+          "Data",
+          "Prospects, memberships, supervisory links, readiness, review history."
+        ],
+        [
+          "Rules",
+          "Authorized actions, prerequisites, corrections, and financial-only credit."
+        ],
+        [
+          "Experience",
+          "Role workspaces, queues, status language, and next actions."
+        ],
+        [
+          "Reporting",
+          "Separate recorded and verified amounts; agree fields for each audience."
+        ],
+        [
+          "Migration",
+          "Preserve real identities, balances, receipts, reviewers, and audit history."
+        ],
+        [
+          "Acceptance",
+          "Test the complete journey, denied actions, recovery, and launch readiness."
+        ]
+      ],
+      "notes": "Avoid changing only role names or screen labels. Update schema, services, permissions, forms, reports, exports, background jobs, live-event access, tests, and documentation together. Preserve historical decision attribution; do not fabricate operational approvals for old records. Client policies and production provisioning remain separate acceptance work.",
+      "source": "Cross-module implementation assessment · V4 implementation notes"
+    },
+    {
+      "id": "delivery",
+      "chapter": "alignment",
+      "type": "delivery",
+      "status": "proposed",
+      "eyebrow": "THE REVISION SEQUENCE",
+      "title": "Build the workflow in a deliberate order.",
+      "summary": "Each stage has a reviewable outcome. Dates follow the confirmed scope and delivery plan.",
+      "steps": [
+        [
+          "01",
+          "Confirm",
+          "Workflow map, role matrix, rules, and scope decisions."
+        ],
+        [
+          "02",
+          "Establish",
+          "Access, personnel onboarding, prospects, and batch lifecycle."
+        ],
+        [
+          "03",
+          "Connect",
+          "Enrollment, schedules, payment reviews, and work routing."
+        ],
+        [
+          "04",
+          "Extend",
+          "Role dashboards, reports, KPI, commissions, support, and portal."
+        ],
+        [
+          "05",
+          "Accept",
+          "Migration rehearsal, client UAT, training, and release approval."
+        ]
+      ],
+      "notes": "This is a dependency order, not a replacement for the previously discussed calendar window and not a new commitment to dates or cost. Keep a stable prototype version for demonstration while implementing changes in isolated branches. Agree acceptance criteria per slice and review with actual role holders before proceeding to release.",
+      "source": "Proposed implementation sequence · V4 development priorities"
+    },
+    {
+      "id": "outcomes",
+      "chapter": "outcome",
+      "type": "outcomes",
+      "status": "expected",
+      "eyebrow": "04 / THE EXPECTED OUTCOME",
+      "title": "A system the team can operate with confidence.",
+      "summary": "Expected benefits become meaningful when we can demonstrate the behavior behind them.",
+      "items": [
+        [
+          "Clear accountability",
+          "Every payment and enrollment has an owner, decision, and history.",
+          "Show the next reviewer and the full trail."
+        ],
+        [
+          "Reliable collection figures",
+          "Payment claims remain distinct from actual verified funds.",
+          "An unverified claim leaves the balance unchanged."
+        ],
+        [
+          "Less manual coordination",
+          "Queues surface who needs to act and what is waiting.",
+          "A completed review routes the next item once."
+        ],
+        [
+          "Consistent visibility",
+          "Staff, customers, and executives see information appropriate to their role.",
+          "Reassignment removes access to old records."
+        ]
+      ],
+      "notes": "These are intended outcomes, not measured improvements or guarantees. Do not promise percentage reductions or faster collection without a baseline. Agree practical indicators such as review aging, unresolved discrepancies, incomplete batches, and reconciliation exceptions after the client confirms definitions.",
+      "source": "Expected outcomes tied to the proposed acceptance checks"
+    },
+    {
+      "id": "acceptance",
+      "chapter": "outcome",
+      "type": "acceptance",
+      "status": "proposed",
+      "eyebrow": "HOW WE KNOW IT WORKS",
+      "title": "Prove the full journey with the actual roles.",
+      "summary": "Use a representative batch and synthetic payment, including a correction and an access check.",
+      "items": [
+        [
+          "Create correctly",
+          "Eight confirmations create an ID; incomplete readiness blocks activation."
+        ],
+        [
+          "Review completely",
+          "The Handler submits; Records and the Manager check; Finance decides."
+        ],
+        [
+          "Protect the balance",
+          "Pending and returned claims apply no credit; verified credit updates correctly."
+        ],
+        [
+          "Recover visibly",
+          "A correction keeps its history and repeats the necessary checks."
+        ],
+        [
+          "Enforce boundaries",
+          "Executives cannot financially verify; a Handler cannot open another batch."
+        ],
+        [
+          "Release deliberately",
+          "Reconciled migration, role-based UAT, training, and launch approval."
+        ]
+      ],
+      "notes": "These are proposed acceptance criteria. Named representatives from Records, Batch Management, Finance, HR, recruitment coordination, CSR, and management should validate their flows. Test permissions directly through the API as well as the interface. Rehearse private file access, failed/retried routing, concurrent decisions, reassignment, backup/restore, and financial reconciliation.",
+      "source": "Proposed UAT criteria · V4 operating rules · Current launch checklists"
+    },
+    {
+      "id": "discussion",
+      "chapter": "outcome",
+      "type": "discussion",
+      "status": "decision",
+      "eyebrow": "THE DECISIONS TO MAKE TOGETHER",
+      "title": "Agree the rules before the next implementation.",
+      "summary": "Use the decision log to record answers, changes, owners, and follow-up.",
+      "items": [
+        [
+          "Membership",
+          "Who approves? Can one customer join several batches?"
+        ],
+        [
+          "Batch readiness",
+          "What is capacity? What activates a batch? When do dates become final?"
+        ],
+        [
+          "Payment reviews",
+          "What order is required? Who handles corrections and Finance backup?"
+        ],
+        [
+          "Personnel & commissions",
+          "Who grants roles? What defines eligibility, payout, and payroll scope?"
+        ],
+        [
+          "Customer features",
+          "Applications, purchase requests, checkout, draws, release, and delivery?"
+        ],
+        [
+          "Existing data & launch",
+          "What must migrate, who reconciles it, and who accepts the new system?"
+        ]
+      ],
+      "notes": "Do not assume silence is confirmation. For each open item, capture the decision, accountable person, and any example or policy the team must supply. The browser-local decision log provides a discussion aid; exported notes should be reviewed before being treated as approved requirements. The questions come from gaps in the documents, not a claim that the business has no existing policies.",
+      "source": "Open decisions from the document and prototype comparison"
+    },
+    {
+      "id": "next-steps",
+      "chapter": "outcome",
+      "type": "next",
+      "status": "discussion",
+      "eyebrow": "WHAT LEAVES THIS MEETING",
+      "title": "A shared plan for the next Fresh Phones PH.",
+      "summary": "Turn the discussion into concrete, reviewable work.",
+      "items": [
+        [
+          "01",
+          "Confirmed workflow",
+          "Roles, handoffs, prerequisites, and exception paths."
+        ],
+        [
+          "02",
+          "Agreed access matrix",
+          "Who can view, create, review, approve, and verify."
+        ],
+        [
+          "03",
+          "Revision backlog",
+          "Changes, dependencies, scope boundaries, and priorities."
+        ],
+        [
+          "04",
+          "Acceptance plan",
+          "Demo scenarios, named reviewers, and release conditions."
+        ]
+      ],
+      "callout": "Demonstrate → clarify → document → implement → validate.",
+      "notes": "Close by reading the decisions back to the client and identifying unresolved questions with owners. Reconcile the new operating requirements with the earlier scope, then update the approved delivery plan. Save exported decision notes with the project record. The prototype remains useful as the reference for what already exists.",
+      "source": "Proposed meeting deliverables"
+    },
+    {
+      "id": "backlog",
+      "chapter": "reference",
+      "type": "backlog",
+      "status": "proposed",
+      "eyebrow": "05 / IMPLEMENTATION INVENTORY",
+      "title": "The complete alignment checklist.",
+      "summary": "A planning inventory. Exact fields, rules, and scope remain subject to the recorded decisions.",
+      "items": [
+        [
+          "Roles & organization",
+          "12 staff roles, reporting lines, assignments, technical-admin separation."
+        ],
+        [
+          "Personnel onboarding",
+          "Approval, training completion, account activation, limited role grants."
+        ],
+        [
+          "Prospects & recruitment",
+          "Member prospects, Agent ownership, endorsements, Pioneer oversight."
+        ],
+        [
+          "Batch IDs & readiness",
+          "Eight-person confirmation, unique ID, slots, requirements, activation."
+        ],
+        [
+          "Enrollment & schedules",
+          "Approval authority, GC confirmation, dates, terms, multiple memberships."
+        ],
+        [
+          "Payments & receipts",
+          "Assigned entry, proof completeness, operational reviews, Finance-only decision."
+        ],
+        [
+          "Exceptions & reconciliation",
+          "Correction, duplicate, partial/excess payment, reversal, matching rules."
+        ],
+        [
+          "Queues & notifications",
+          "Automatic routing, owners, aging, backup, escalations, approved wording."
+        ],
+        [
+          "Dashboards & reports",
+          "Per-role visibility, verified-only balances, exports, agreed calculations."
+        ],
+        [
+          "HR, KPI & commissions",
+          "Targets, evaluations, confidentiality, eligibility, summaries."
+        ],
+        [
+          "CSR & customer portal",
+          "Limited lookup, support escalation, own records, application/order scope."
+        ],
+        [
+          "Release, migration & launch",
+          "Eligibility and delivery rules, audit preservation, rehearsal, UAT, training."
+        ]
+      ],
+      "notes": "This inventory groups all major areas from the preceding assessment. Cross-cutting work includes API access, private files, validation, audit history, job idempotency, report/export scoping, documentation, schema migrations, session/access revocation, and production provisioning. Detailed scope expansion such as full checkout or a payroll engine needs its own agreement.",
+      "source": "Consolidated alignment assessment · 18 October 2026"
+    },
+    {
+      "id": "sources",
+      "chapter": "reference",
+      "type": "sources",
+      "status": "reference",
+      "eyebrow": "THE BASIS FOR THIS DISCUSSION",
+      "title": "Grounded in the supplied workflow and current code.",
+      "summary": "Keep documented rules, implementation findings, and proposed choices distinguishable.",
+      "items": [
+        [
+          "Client workflow",
+          "Fresh_Phones_PH_Basic_Website_Workflow.docx",
+          "Hiring, membership, payment reviews, automation, and portal intent."
+        ],
+        [
+          "Organizational Structure V4",
+          "Fresh_Phones_PH_Organizational_Structure_V4.pdf",
+          "October 2026 · 4 pages · Roles, permissions, Batch IDs, reviews, priorities."
+        ],
+        [
+          "Current local prototype",
+          "freshphonesph-main-run · reviewed 18 Oct 2026",
+          "Role contracts, database schema, enrollment, Finance, and existing modules."
+        ],
+        [
+          "Prototype interface evidence",
+          "Desktop: October 2026 · Mobile: 27 September 2026",
+          "Current desktop components with illustrative data, plus recorded synthetic-account mobile captures."
+        ]
+      ],
+      "callout": "This presentation is a discussion aid. Proposed additions are not production features or signed acceptance.",
+      "notes": "Primary references: both supplied client files. Implementation references: packages/contracts/src/index.ts; apps/api-ts/prisma/schema.prisma; src/records/records.service.ts and scope.ts; src/finance/finance.service.ts; docs/BUILD_STATUS.md; docs/36-scope-handoff.md; docs/08-commercials-boundaries.md. Current code includes uncommitted work and is not a claim about the latest remote deployment. Desktop screenshots render the actual local portal components with isolated illustrative API responses; mobile captures come from docs/uat/customer-mobile-walkthrough-2026-09-27.md. No operational backend acceptance or real financial transaction was performed for these captures.",
+      "source": "Prepared for discussion · October 2026"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "member-approval",
+      "title": "Membership approval",
+      "question": "Who gives final membership approval, and which requirements must be complete before enrollment?"
+    },
+    {
+      "id": "batch-rules",
+      "title": "Batch capacity and activation",
+      "question": "How many slots does a batch have? What activates it? How do withdrawals, replacements, and enrollment after activation work?"
+    },
+    {
+      "id": "schedule-start",
+      "title": "Dates and payment obligations",
+      "question": "When is the start date final, and when do installment schedules become binding: at enrollment or at activation?"
+    },
+    {
+      "id": "payment-routing",
+      "title": "Payment review order",
+      "question": "Must Records and the Batch Manager finish before Finance can decide? Can Finance begin checking receipts earlier?"
+    },
+    {
+      "id": "finance-cover",
+      "title": "Finance coverage and corrections",
+      "question": "Who provides authorized Finance backup? Who corrects returned claims, and what reviews must be repeated?"
+    },
+    {
+      "id": "memberships",
+      "title": "Multiple memberships",
+      "question": "Can one customer join more than one batch, and can an employee hold more than one operational role?"
+    },
+    {
+      "id": "commissions",
+      "title": "Payroll and commission scope",
+      "question": "What determines commission eligibility and payout? Are payroll summaries sufficient, or is a separately specified computation engine needed?"
+    },
+    {
+      "id": "portal-scope",
+      "title": "Applications and product purchases",
+      "question": "Does the portal accept applications and order requests, or is online checkout required as a separate scope?"
+    },
+    {
+      "id": "releases",
+      "title": "Draws, releases, and deliveries",
+      "question": "What makes a member eligible for a device, who approves release, and which draw and delivery records are required?"
+    },
+    {
+      "id": "migration",
+      "title": "Existing records and launch",
+      "question": "Which existing records are real and must be migrated? How will old approvals, pending payments, and opening balances be reconciled and accepted?"
+    }
+  ],
+  "emphasis": {
+    "start": [
+      "aligned",
+      "operations"
+    ],
+    "today": [
+      "working foundation",
+      "Member records",
+      "financial decisions",
+      "audit records",
+      "Business acceptance",
+      "production setup"
+    ],
+    "prototype-screens": [
+      "Desktop and mobile",
+      "verified payments",
+      "remaining balance",
+      "Documents",
+      "Membership"
+    ],
+    "demo": [
+      "one member",
+      "pending claim",
+      "financial decision",
+      "verified amounts",
+      "Confirmed",
+      "Needs revision",
+      "Later"
+    ],
+    "operating-model": [
+      "official records",
+      "official record",
+      "Payment recording",
+      "Own membership",
+      "confirm scope"
+    ],
+    "organization": [
+      "Twelve roles",
+      "COO"
+    ],
+    "onboarding": [
+      "Training",
+      "approved",
+      "authorized roles",
+      "readiness",
+      "elevated access"
+    ],
+    "member-journey": [
+      "active batch",
+      "8 confirmed prospects",
+      "Batch ID creation",
+      "Activation",
+      "complete slots and conditions"
+    ],
+    "batch-readiness": [
+      "payment schedule",
+      "issued at enrollment",
+      "before activation",
+      "tentative or binding",
+      "binding terms"
+    ],
+    "payments": [
+      "financial decision",
+      "actual funds received",
+      "financial verification",
+      "verified credit",
+      "Operational check"
+    ],
+    "payment-exceptions": [
+      "next step",
+      "Finance confirmation",
+      "financial status remains pending",
+      "original decisions",
+      "duplicate",
+      "partial"
+    ],
+    "role-alignment": [
+      "authority",
+      "Only Finance",
+      "only Finance",
+      "assigned batches",
+      "financial verification",
+      "authorized role"
+    ],
+    "new-workspaces": [
+      "recruitment team",
+      "assigned Agents",
+      "Own endorsements",
+      "commission eligibility",
+      "distinct workflows"
+    ],
+    "core-records": [
+      "enrollment",
+      "Eight-person confirmation",
+      "activation checks",
+      "agreed terms",
+      "multiple memberships"
+    ],
+    "automation": [
+      "waiting",
+      "next action",
+      "prerequisites",
+      "responsible reviewer",
+      "correction reason",
+      "Assignment rules"
+    ],
+    "supporting-modules": [
+      "same model",
+      "commission rules",
+      "human evaluations",
+      "Limited customer",
+      "release eligibility",
+      "Confirm separately"
+    ],
+    "implementation-map": [
+      "One operating model",
+      "Authorized actions",
+      "recorded and verified",
+      "real identities",
+      "complete journey"
+    ],
+    "delivery": [
+      "deliberate order",
+      "confirmed scope",
+      "Access",
+      "payment reviews",
+      "client UAT",
+      "release approval"
+    ],
+    "outcomes": [
+      "confidence",
+      "Clear accountability",
+      "verified funds",
+      "next reviewer",
+      "balance unchanged",
+      "Reassignment"
+    ],
+    "acceptance": [
+      "actual roles",
+      "blocks activation",
+      "Finance decides",
+      "no credit",
+      "history",
+      "cannot financially verify",
+      "launch approval"
+    ],
+    "discussion": [
+      "Agree the rules",
+      "Who approves",
+      "capacity",
+      "Finance backup",
+      "payroll scope",
+      "who accepts"
+    ],
+    "next-steps": [
+      "shared plan",
+      "Confirmed workflow",
+      "Agreed access matrix",
+      "Revision backlog",
+      "Acceptance plan"
+    ],
+    "backlog": [
+      "alignment checklist",
+      "Finance-only decision",
+      "verified-only balances",
+      "audit preservation",
+      "activation",
+      "privacy"
+    ],
+    "sources": [
+      "supplied workflow",
+      "Proposed additions",
+      "not production features",
+      "signed acceptance"
+    ]
+  }
+}

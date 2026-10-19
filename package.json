@@ -1,13 +1,29 @@
 {
-  "name": "freshphonesph-workflow-discussion",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Fresh Phones PH prototype and workflow alignment presentation",
-  "type": "module",
-  "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "check": "node scripts/check.mjs",
-    "start": "node scripts/serve.mjs"
-  },
-  "engines": { "node": ">=20" }
+	"name": "freshphonesph-workflow-discussion",
+	"version": "2.0.0",
+	"private": true,
+	"description": "Fresh Phones PH workflow alignment presentation, powered by Open Slide",
+	"type": "module",
+	"scripts": {
+		"dev": "open-slide dev --host 127.0.0.1 --port 4173",
+		"start": "npm run dev",
+		"build": "open-slide build && node scripts/prepare-pages.mjs",
+		"preview": "open-slide preview --host 127.0.0.1 --port 4173",
+		"check": "tsc --noEmit && node scripts/check.mjs",
+		"sync:skills": "open-slide sync:skills"
+	},
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"dependencies": {
+		"@open-slide/core": "2.2.0",
+		"react": "19.2.8",
+		"react-dom": "19.2.8"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.0",
+		"@types/react": "^19.2.18",
+		"@types/react-dom": "^19.2.5",
+		"typescript": "^5.9.3"
+	}
 }

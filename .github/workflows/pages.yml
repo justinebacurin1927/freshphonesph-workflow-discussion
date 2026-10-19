@@ -23,8 +23,19 @@ jobs:
     steps:
       - name: Check out the presentation
         uses: actions/checkout@v7.0.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install the pinned Open Slide runtime
+        run: npm ci
       - name: Check content, JavaScript, and local assets
         run: npm run check
+      - name: Build the Open Slide presentation
+        run: npm run build
+        env:
+          OPEN_SLIDE_BASE: /freshphonesph-workflow-discussion/
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6.0.0
       - name: Upload the static presentation

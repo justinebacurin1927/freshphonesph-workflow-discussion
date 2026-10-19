@@ -1,66 +1,60 @@
 # Fresh Phones PH workflow discussion
 
-A standalone presentation website for discussing the Fresh Phones PH prototype, the supplied client workflow, the changes required for alignment, and the expected outcomes.
+A 24-page [Open Slide](https://github.com/open-slide/open-slide) presentation covering the existing prototype, supplied client workflow, required alignment work, and expected outcomes. Five chapters retain the original content, provenance, and discussion prompts.
 
-The deck contains 24 slides in five chapters. Existing prototype capabilities, documented client rules, proposed additions, open decisions, and expected outcomes have distinct labels. It does not modify or connect to the operational Fresh Phones PH application.
-
-## Open the presentation
-
-[View the presentation on GitHub Pages](https://justinebacurin1927.github.io/freshphonesph-workflow-discussion/).
-
-The presentation and this repository are public. No ChatGPT sign-in is required. Changes pushed to `main` run the checks and publish `dist/` through `.github/workflows/pages.yml`.
-
-## Design and prototype views
-
-The presentation uses the supplied palette: deep teal `#042329`, teal `#005850`, green `#008C5E`, and mint `#7CC490`. Sora headings and DM Sans body text are served from local font files, with their SIL Open Font License notices retained. Bold emphasis highlights the important rules, responsibilities, and decisions.
-
-The prototype slide includes both desktop and mobile previews. Overview, Support, and Documents switch both captures; the screen-size controls select desktop, mobile, or both. Click a capture to inspect its full interface in an enlarged view.
+[Open the public presentation](https://justinebacurin1927.github.io/freshphonesph-workflow-discussion/).
 
 ## Run locally
 
-Requires Node.js 20 or newer. No package installation or API credentials are needed.
+Use Node.js 24 (minimum 22.12):
 
 ```sh
+npm ci
 npm run dev
 ```
 
-Open `http://127.0.0.1:4173`. Set `PORT` to use a different local port.
+Open `http://127.0.0.1:4173/s/workflow-discussion`. The root opens Open Slide's deck browser during development.
 
 ```sh
 npm run check
+npm run build
+npm run preview
 ```
 
-## Present
+The production root opens the deck directly. Add `?browser=1` to open the deck browser. `@open-slide/core` is pinned to **2.2.0**, matching the repository cloned to `/home/jaycee/Projects/open-slide` for reference; this workspace installs the published runtime so CI and other machines do not depend on that local checkout.
 
-- Use the arrow keys, Previous and Next buttons, or a horizontal swipe to navigate.
-- Press **O** for the contents, **N** for presenter notes, and **F** for presentation mode.
-- Presentation mode fills the screen. Move the pointer to the top or bottom, tap on a touch screen, or press Tab to reveal controls; they hide after a short pause. Press **Esc** or **F** to exit.
-- Slide text uses larger reading sizes, including card lists and role-table cells. Notes appear as plain text; the decorative top tabs and highlighted note strips have been removed. Narrow screens scroll within a fullscreen slide when needed.
-- Use Home and End to jump to the first and last slides.
-- Copy a slide link to share its exact position.
-- Print the complete deck using the header's print button; choose landscape PDF if your browser does not honor the page settings.
+## Present and discuss
 
-The Decision log stores answers in the current browser only. Export notes as Markdown to share or retain them. Browser-local notes are not uploaded to the site or GitHub, synchronized between devices, or treated as signed client acceptance. The site's `noindex` metadata is an indexing preference; the GitHub Pages presentation remains publicly accessible.
+Use Open Slide's toolbar for fullscreen presentation, slide overview, presenter notes, the separate presenter window, and exports (HTML, PDF, PowerPoint). Use the displayed keyboard shortcuts or arrow keys to navigate. The framework scales each 1920×1080 page to fit the display; other aspect ratios have space around the canvas.
 
-## Edit content
+The prototype page includes Overview, Support, and Documents tabs; Desktop, Mobile, and Both controls; and enlarged captures. The payment workflow has five selectable stages. The Discussion and Next Steps pages open the decision log and export its Markdown notes.
+
+Decision notes remain in the current browser, using the same storage key as the earlier presentation. Export a copy before changing devices. They are not synchronized, uploaded, or treated as signed client acceptance. The public site's `noindex` metadata is an indexing preference.
+
+## Edit
 
 | File | Purpose |
 | --- | --- |
-| `dist/slides.js` | Slide content, source references, presenter notes, and discussion prompts |
-| `dist/app.js` | Slide rendering, navigation, workflow inspection, decision log, and export |
-| `dist/styles.css` | Responsive layout, presentation mode, and all-slide print styling |
-| `dist/readability.css` | Shared screen typography and larger card, diagram, and table layouts |
-| `dist/assets/` | Favicon and existing synthetic-account prototype captures |
-| `scripts/serve.mjs` | Dependency-free local static server |
-| `.github/workflows/pages.yml` | Check and publish `dist/` to GitHub Pages on pushes to `main` |
-| `.openai/hosting.json` | Retained identity for the earlier private Sites preview |
+| `slides/workflow-discussion/index.tsx` | React pages, aligned speaker notes, interactions, metadata, and design tokens |
+| `slides/workflow-discussion/assets/content.json` | Preserved slide content, five chapters, ten decisions, and bold emphasis |
+| `slides/workflow-discussion/assets/deck.css` | Scoped canvas layouts and local fonts |
+| `slides/workflow-discussion/assets/` | Original desktop/mobile captures, favicon, fonts, and font licenses |
+| `open-slide.config.ts` | Runtime, local port, and deployment base |
+| `scripts/prepare-pages.mjs` | Public metadata, direct slide/presenter routes, and legacy slide-link compatibility |
+| `.github/workflows/pages.yml` | Check, build, and deploy to GitHub Pages |
 
-Any static host can serve `dist/`. Relative assets and hash-based slide links support the GitHub Pages project subdirectory. The GitHub Pages workflow is the current publication path; the earlier private Sites preview is no longer the discussion link.
+Read the runtime's `skills/slide-authoring/SKILL.md` before editing. `dist/` is generated; edit the source and rebuild. The dev runtime includes inspector comments and design controls. This project does not modify the framework clone.
 
-## Sources and boundaries
+## Publish
 
-Prepared from the supplied `Fresh_Phones_PH_Basic_Website_Workflow.docx` and `Fresh_Phones_PH_Organizational_Structure_V4.pdf`, plus the local `freshphonesph-main-run` code and project documentation inspected on 18 October 2026. The original client documents and application source are not copied into this repository.
+Changes pushed to `main` install the lockfile, check the deck, and build with `OPEN_SLIDE_BASE=/freshphonesph-workflow-discussion/` before publishing `dist/`. The source and presentation are public and require no ChatGPT sign-in. Direct links such as `s/workflow-discussion?p=10` and the presenter route work on reload. Earlier root links such as `#payments` still open the corresponding page.
 
-Mobile screenshots are earlier captures from `docs/uat/customer-mobile-walkthrough-2026-09-27.md` in the prototype repository. That walkthrough identifies them as synthetic-account evidence. Desktop screenshots show the actual local portal components rendered in October 2026 with isolated illustrative API responses, captured at 1600×1000. No production data or live financial transactions were used. Both capture sources are labeled in the deck; neither establishes business acceptance or backend verification.
+The earlier private Sites preview identity is retained in `.openai/hosting.json`; GitHub Pages remains the publication path.
 
-Proposed states, role mappings, scope expansions, acceptance scenarios, and implementation phases require client confirmation. The presentation makes no new price, delivery-date, production-readiness, or measured-benefit commitment.
+## Sources
+
+Prepared from `Fresh_Phones_PH_Basic_Website_Workflow.docx`, `Fresh_Phones_PH_Organizational_Structure_V4.pdf`, and local `freshphonesph-main-run` code/documentation inspected on 18 October 2026. Original client documents and application source are not copied here.
+
+Desktop captures show the actual October 2026 portal components with isolated illustrative API data. Mobile captures are the recorded 27 September 2026 synthetic-account evidence. Both remain labeled and do not establish business acceptance or backend verification.
+
+The approved teal/green palette (`#042329`, `#005850`, `#008C5E`, `#7CC490`), Sora headings, and DM Sans body text are retained, including SIL Open Font License notices. Proposed states, role mappings, scope expansions, acceptance scenarios, and delivery phases require client confirmation. The deck makes no new price, delivery-date, production-readiness, or measured-benefit commitment.
