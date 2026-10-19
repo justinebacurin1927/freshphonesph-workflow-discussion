@@ -14,6 +14,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import content from "./assets/content.json";
+import freshPhonesLogo from "./assets/fresh-phones-logo.png";
 import desktopOverview from "./assets/prototype-desktop-overview.png";
 import desktopSupport from "./assets/prototype-desktop-support.png";
 import desktopDocuments from "./assets/prototype-desktop-documents.png";
@@ -845,8 +846,10 @@ function DeckPage({ slide, number }: { slide: Slide; number: number }) {
 				aria-label={`Slide ${number}: ${slide.title}`}
 			>
 				<div className="fp-topline">
-					<span>
-						fp<span className="fp-star">✦</span> <b>FRESH PHONES PH</b>
+					<span className="fp-brand">
+						<span className="fp-brand-logo">
+							<img src={freshPhonesLogo} alt="Fresh Phones PH logo" />
+						</span>
 						<span className="fp-chapter-label">
 							{" "}
 							/ {chapter.number} {chapter.title}

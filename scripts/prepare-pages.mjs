@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -14,6 +14,8 @@ if (!base.startsWith("/") || !base.endsWith("/"))
 	throw new Error("OPEN_SLIDE_BASE must start and end with /.");
 const canonical =
 	"https://justinebacurin1927.github.io/freshphonesph-workflow-discussion/";
+const logoFile = (await readdir(path.join(root, "dist/assets"))).find(file => /^fresh-phones-logo-[\w-]+\.png$/.test(file));
+if (!logoFile) throw new Error("The built Fresh Phones PH logo is missing.");
 const bootstrap = `<script>
   (() => {
     const base = ${JSON.stringify(base)};
@@ -40,12 +42,8 @@ html = html.replace(
   <meta property="og:title" content="Fresh Phones PH — Workflow alignment">
   <meta property="og:url" content="${canonical}">
   <link rel="canonical" href="${canonical}">
-  <link rel="icon" href="${base}freshphones.svg" type="image/svg+xml">
+  <link rel="icon" href="${base}assets/${logoFile}" type="image/png">
   ${bootstrap}`,
-);
-await copyFile(
-	path.join(root, "slides/workflow-discussion/assets/favicon.svg"),
-	path.join(root, "dist/freshphones.svg"),
 );
 await writeFile(path.join(root, "dist/index.html"), html);
 await writeFile(path.join(root, "dist/404.html"), html);
